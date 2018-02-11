@@ -11,7 +11,8 @@ You are a coder of class and wisdom and you WILL order pizza from the terminal. 
 It must be done.
 
 Now it can be (Once I finish this project...)
-           
+
+<pre>
 		   _....._
        _.:`.--|--.`:._
      .: .'\o  | o /'. '.
@@ -24,4 +25,4 @@ Now it can be (Once I finish this project...)
      '.'.o / o|  \ o.'.'
        `-:/.__|__o\:-'
           `"--=--"`
-
+</pre>
