@@ -11,3 +11,17 @@ You are a coder of class and wisdom and you WILL order pizza from the terminal. 
 It must be done.
 
 Now it can be (Once I finish this project...)
+           
+		   _....._
+       _.:`.--|--.`:._
+     .: .'\o  | o /'. '.
+    // '.  \ o|  /  o '.\
+   //'._o'. \ |o/ o_.-'o\\
+   || o '-.'.\|/.-' o   ||
+   ||--o--o-->|<o-----o-||
+   \\  o _.-'/|\'-._o  o//
+    \\.-'  o/ |o\ o '-.//
+     '.'.o / o|  \ o.'.'
+       `-:/.__|__o\:-'
+          `"--=--"`
+
