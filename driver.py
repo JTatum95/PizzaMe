@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import signal
 import sys
 import urllib
 import webbrowser
@@ -8,6 +9,12 @@ import getpass
 import os
 import io 
 from pyquery import PyQuery
+
+def signal_handler(signal, frame):
+        print('\nExiting program ... ')
+        sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
 
 def get_info():
     answer = input("Do you have a Papa John's account (y/n)? ")
@@ -20,9 +27,6 @@ def get_info():
         hasAccount = False
     return hasAccount
 
-print("Welcome to PizzaMe. This is in beta, so please let me know any issues that arise.")
-# print("Please be reasonable with user input, this is in early development")
-
 if get_info() == False:
     print("Please make an account on the Papa John's website and the run this script again")
     webbrowser.open("https://www.papajohns.com/order/create-account", new=2)
@@ -30,12 +34,10 @@ if get_info() == False:
 
 #name = input("What is your name? ")
 
-#email
 #id = signIn-account-sign-in-email
 #name = user
 user = input("Enter your account email address: ")
 
-#pwd
 #id = signIn-account-sign-in-password
 #name = pass
 password = getpass.getpass("Enter your account password: ")
@@ -45,18 +47,6 @@ url = 'https://www.papajohns.com/order/sign-in'
 payload = { 'user': user, 'pass': password }
 
 data = urllib.parse.urlencode(payload)
-'''
-opener = urllib.request.build_opener(
-    urllib.request.HTTPRedirectHandler(),
-    urllib.request.HTTPHandler(debuglevel=0),
-    urllib.request.HTTPSHandler(debuglevel=0),
-    urllib.request.HTTPCookieProcessor(cookies))
-response = opener.open(url, data)
-the_page = response.read()
-http_headers = response.info()
-'''
-#p = requests.get(url)
-#print(p.headers)
 
 # Use 'with' to ensure the session context is closed after use.
 # Session handles cookies
@@ -69,7 +59,10 @@ with requests.Session() as s:
         count += 1
 
     print("Count: " + str(count))
-#    print("Title: " + r.title)
+    if count != 4:
+        print("nope, not right")
+        sys.exit(0)
+    #print("Title: " + r.title)
 
 fd = open("form.html", "wb")
 fd.write(r.content)
